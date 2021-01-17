@@ -1,0 +1,19 @@
+version: "2.0"
+
+rules:
+- rule: Dites au revoir à chaque fois que l'utilisateur dit au revoir
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Dites `` je suis un robot '' chaque fois que l'utilisateur pose la question
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: knowledge
+  steps:
+  - intent: get_knowledge
+  - action: action_get_knowledge
+  - action: action_slot_reset
+

@@ -1,0 +1,53 @@
+version: "2.0"
+
+intents:
+  - software_teamviewer
+  - software_teamviewer_licence
+  - software_teamviewer_error
+  - software_teamviewer_status
+
+responses:
+  utter_software_teamviewer:
+  - text: "Votre problème est-il lié à l'activation(licence) de Teamviewer ou un\n
+            problème logiciel (erreur, connexion non fonctionnelle) ? \n"
+    buttons:
+    - payload: /software_teamviewer_licence
+      title: Activation de Teamviewer
+    - payload: /software_teamviewer_error
+      title: Problème Logiciel
+  utter_software_teamviewer_deny:
+  - text: "Rendez-vous dans Suppléments > Activer une licence > S'inscrire"
+  utter_software_teamviewer_deny2:
+  - text: "Créer un compte avec votre adresse en @cirilgroup.com.\n
+          Le mot de passe n'est pas synchronisé avec notre SI interne."
+  utter_software_teamviewer_deny3:
+  - text: "La dsi devrait recevoir un mail automatique afin d'activer votre compte.\n
+            Vous pouvez contacter dsi@cirilgroup.com si l'activation n'est pas effectué après 24 heures"
+  utter_software_teamviewer_licence:
+  - text: "Disposez déjà vous d'une version TeamViewer sur votre poste ?"
+    buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+  utter_software_teamviewer_licence_affirm:
+  - text: "Disposez-vous de la dernière version de TeamViewer ?"
+    buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+  utter_software_teamviewer_licence_deny:
+  - text: "Merci d'installer la dernière version Teamviewer : "
+    custom:
+      link: lien de la dernière version
+  utter_software_teamviewer_licence_deny2:
+  - text: "Réaliser ensuite la procédure suivante :"
+  utter_software_teamviewer_error:
+  - text: "Vous pouvez consulter l'état des serveurs Teamviewer à l'adresse suivante :"
+    custom:
+      link: https://status.teamviewer.com
+  utter_software_teamviewer_error2:
+  - text: "Vous pouvez contacter la dsi : "
+    custom:
+      email: dsi@cirilgroup.com

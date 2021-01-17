@@ -1,0 +1,36 @@
+version: "2.0"
+
+intents:
+  - material_require_type
+  - material_require_type_replacement
+  - material_require_type_new
+  - material_require_type_new_hiring
+  - material_require_type_new_sup
+
+responses:
+  utter_material_require_type:
+    - text: "Souhaitez vous du nouveau matériel ou remplacer de l'ancien."
+      buttons:
+      - payload: /material_require_type_new
+        title: Nouveau matériel
+      - payload: /material_require_type_replacement
+        title: Remplacer de l'ancien
+  utter_material_require_type_replacement:
+    - text: "Visiter le lien suivant:"
+      custom:
+        link: url du gestionnaire de ticket replacement
+  utter_material_require_type_new:
+    - text: "Votre demande est consécutive à une embauche ou est-ce pour du matériel supplémentaire ?"
+      buttons:
+      - payload: /material_require_type_new_hiring
+        title: Embauche
+      - payload: /material_require_type_new_sup
+        title: Matériel supplémentaire
+  utter_material_require_type_new_hiring:
+    - text: "Visiter le lien suivant:"
+      custom:
+        link: url du gestionnaire de ticket new hiring
+  utter_material_require_type_new_sup:
+    - text: "Visiter le lien suivant:"
+      custom:
+        link: url du gestionnaire de ticket new sup

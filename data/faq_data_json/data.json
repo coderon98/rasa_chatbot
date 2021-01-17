@@ -1,0 +1,86 @@
+{
+"hotel": [
+        {
+            "id": "0",
+            "name": "Hilton",
+            "price_range": "expensive",
+            "breakfast_included": "true",
+            "city": "Berlin",
+            "free_wifi": "true",
+            "star_rating": "5",
+            "swimming_pool": "true"
+        },
+        {
+            "id": "1",
+            "name": "Hilton",
+            "price_range": "expensive",
+            "breakfast_included": "true",
+            "city": "Frankfurt am Main",
+            "free_wifi": "true",
+            "star_rating": "4",
+            "swimming_pool": "false"
+        },
+        {
+            "id": "2",
+            "name": "B&B",
+            "price_range": "mid_range",
+            "breakfast_included": "false",
+            "city": "Berlin",
+            "free_wifi": "false",
+            "star_rating": "1",
+            "swimming_pool": "false"
+        },
+        {
+            "id": "3",
+            "name": "Berlin Wall Hostel",
+            "price_range": "cheap",
+            "breakfast_included": "false",
+            "city": "Berlin",
+            "free_wifi": "true",
+            "star_rating": "2",
+            "swimming_pool": "false"
+        },
+        {
+            "id": "4",
+            "name": "City Hotel",
+            "price_range": "expensive",
+            "breakfast_included": "true",
+            "city": "Frankfurt am Main",
+            "free_wifi": "true",
+            "star_rating": "3",
+            "swimming_pool": "false"
+        },
+        {
+            "id": "5",
+            "name": "Jugendherberge",
+            "price_range": "cheap",
+            "breakfast_included": "true",
+            "city": "Berlin",
+            "free_wifi": "false",
+            "star_rating": "2",
+            "swimming_pool": "false"
+        },
+        {
+            "id": "6",
+            "name": "Berlin Hotel",
+            "price_range": "mid_range",
+            "breakfast_included": "true",
+            "city": "Berlin",
+            "free_wifi": "true",
+            "star_rating": "3",
+            "swimming_pool": "true"
+        },
+        {
+            "id": "7",
+            "name": "Ritz",
+            "price_range": "mid_range",
+            "breakfast_included": "true",
+            "city": "Paris",
+            "free_wifi": "true",
+            "star_rating": "3",
+            "swimming_pool": "true"
+        }
+    ]
+}
+
+

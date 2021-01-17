@@ -1,0 +1,128 @@
+version: "2.0"
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  price_range:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  breakfast_included:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  city:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  free_wifi:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  star_rating:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  swimming_pool:
+    type: text
+    influence_conversation: false
+    initial_value: ""
+  not_found_in_faq:
+    type: text
+    influence_conversation: true
+    initial_value: false
+
+entities:
+  - name
+  - price_range
+  - breakfast_included
+  - city
+  - free_wifi
+  - star_rating
+  - swimming_pool
+  - not_found_in_faq
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - get_knowledge
+
+actions:
+  - action_restarted
+  - action_slot_reset
+  - action_get_knowledge
+  - action_get_faq_answer
+  - action_get_in_library
+
+responses:
+  utter_greet:
+  - text: Salut ! Comment se passe ta journée ?
+    buttons:
+    - payload: /mood_great
+      title: Bien
+    - payload: /mood_unhappy
+      title: Pas bien
+  - text: Salut ! Comment allez vous aujourd'hui ?
+    buttons:
+    - payload: /mood_great
+      title: Bien
+    - payload: /mood_unhappy
+      title: Pas bien
+
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Voici quelque chose pour vous remonter le moral
+  - text: Les mauvais moments servent à mieux savourer les meilleurs. Courage !
+
+  utter_did_that_help:
+  - text: Cela a été utile ?
+    buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+  - text: Cela vous a aidé ?
+    buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+
+  utter_happy:
+  - text: "Formidable, continuez !"
+  - text: "C'est super, j'en suis ravi."
+
+  utter_unhappy:
+  - text: "Je suis triste de l'apprendre !"
+  - text: "Je ne suis navré de l'apprendre !"
+
+  utter_goodbye:
+  - text: "Au revoir"
+  - text: "A plus tard"
+
+  utter_ask_other_question:
+  - text: "Puis-je faire quelque chose d'autre pour vous ?"
+  - text: "Puis-je me rendre utile autrement ?"
+
+  utter_iamabot:
+  - text: "Mon nom est TestX, je suis un chatbot developpé chez Ciril Group"
+  - text: "Je suis un Chatbot, mon nom est TestX"
+
+  utter_out_of_scope:
+  - text: " Désolé, je ne peux pas répondre à cette question ! "
+  - text: " Je suis navré , cette question est probablement en dehors de mon domaine de compétences . "
+
+  utter_ask_rephrase:
+  - text: "Désolé, je ne suis pas sûr de comprendre. Pouvez-vous le reformuler ?"
+  - text: "Pouvez-vous reformuler votre message ? Je n'ai pas tout à fait compris ."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

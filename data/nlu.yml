@@ -1,0 +1,101 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - bonjour
+    - salut
+    - bonjour par ici
+    - bonne soirée
+    - hey there
+    - hey mec
+    - bonsoir
+    - bon après-midi
+    - Coucou
+    - cc
+    - Hi
+    - Salut
+- intent: goodbye
+  examples: |
+    - bonne après-midi
+    - chao
+    - à plus tard
+    - bonne nuit
+    - au revoir
+    - Au revoir
+    - bonne journée
+    - À un de ces quatre
+    - Bye Bye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - En effet
+    - bien sûr
+    - ça sonne bien
+    - correct
+    - oui
+    - affirmatif
+    - c'était parfait
+    - cool
+    - ok
+- intent: deny
+  examples: |
+    - no
+    - n
+    - jamais
+    - Je ne pense pas
+    - en aucune façon
+    - pas vraiment
+    - non
+    - négatif
+- intent: mood_great
+  examples: |
+    - parfait
+    - génial
+    - incroyable
+    - je me sens comme un roi
+    - magnifique
+    - je me sens très bien
+    - Je suis génial
+    - super content
+    - Bien
+    - extrêmement bien
+    - tellement bien
+    - pas mal
+    - très mal
+- intent: mood_unhappy
+  examples: |
+    - ma journée était horrible
+    - Je suis triste
+    - je ne me sens pas très bien
+    - je suis déçu
+    - super triste
+    - Je suis tellement triste
+    - très triste
+    - malheureux
+    - Je ne vais pas bien
+    - Pas terrible
+    - Pas très bien
+    - extrêmement triste
+    - trop triste
+    - pas vraiment bien
+    - Je vais mal
+- intent: bot_challenge
+  examples: |
+    - Etes-vous un robot?
+    - Êtes-vous un être humain?
+    - est-ce que je parle à un robot?
+    - est-ce que je parle à un humain?
+    - Qui es tu ?
+    - qui êtes vous ?
+- intent: nlu_fallback
+  examples: |
+    - Tout message sans intent associé
+    - Message par défaut
+- intent: get_knowledge
+  examples: |
+    - liste des hotels de [Berlin](city)
+    - liste des hotels de [Paris](city)
+    - liste des hotels [Hilton](name)
+    - liste des hotels [B&B](name)

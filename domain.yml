@@ -1,0 +1,196 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- get_knowledge
+- material_require_type
+- material_require_type_replacement
+- material_require_type_new
+- material_require_type_new_hiring
+- material_require_type_new_sup
+- software_teamviewer
+- software_teamviewer_licence
+- software_teamviewer_error
+- software_teamviewer_status
+- nlu_fallback
+entities:
+- name
+- price_range
+- breakfast_included
+- city
+- free_wifi
+- star_rating
+- swimming_pool
+- not_found_in_faq
+slots:
+  name:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  price_range:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  breakfast_included:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  city:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  free_wifi:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  star_rating:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  swimming_pool:
+    type: text
+    initial_value: ''
+    influence_conversation: false
+  not_found_in_faq:
+    type: text
+    initial_value: false
+    influence_conversation: true
+responses:
+  utter_greet:
+  - buttons:
+    - payload: /mood_great
+      title: Bien
+    - payload: /mood_unhappy
+      title: Pas bien
+    text: Salut ! Comment se passe ta journée ?
+  - buttons:
+    - payload: /mood_great
+      title: Bien
+    - payload: /mood_unhappy
+      title: Pas bien
+    text: Salut ! Comment allez vous aujourd'hui ?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Voici quelque chose pour vous remonter le moral
+  - text: Les mauvais moments servent à mieux savourer les meilleurs. Courage !
+  utter_did_that_help:
+  - buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+    text: Cela a été utile ?
+  - buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+    text: Cela vous a aidé ?
+  utter_happy:
+  - text: Formidable, continuez !
+  - text: C'est super, j'en suis ravi.
+  utter_unhappy:
+  - text: Je suis triste de l'apprendre !
+  - text: Je ne suis navré de l'apprendre !
+  utter_goodbye:
+  - text: Au revoir
+  - text: A plus tard
+  utter_ask_other_question:
+  - text: Puis-je faire quelque chose d'autre pour vous ?
+  - text: Puis-je me rendre utile autrement ?
+  utter_iamabot:
+  - text: Mon nom est TestX, je suis un chatbot developpé chez Ciril Group
+  - text: Je suis un Chatbot, mon nom est TestX
+  utter_out_of_scope:
+  - text: ' Désolé, je ne peux pas répondre à cette question ! '
+  - text: ' Je suis navré , cette question est probablement en dehors de mon domaine
+      de compétences . '
+  utter_ask_rephrase:
+  - text: Désolé, je ne suis pas sûr de comprendre. Pouvez-vous le reformuler ?
+  - text: Pouvez-vous reformuler votre message ? Je n'ai pas tout à fait compris .
+  utter_software_teamviewer:
+  - buttons:
+    - payload: /software_teamviewer_licence
+      title: Activation de Teamviewer
+    - payload: /software_teamviewer_error
+      title: Problème Logiciel
+    text: "Votre problème est-il lié à l'activation(licence) de Teamviewer ou un\n\
+      \ problème logiciel (erreur, connexion non fonctionnelle) ? \n"
+  utter_software_teamviewer_deny:
+  - text: Rendez-vous dans Suppléments > Activer une licence > S'inscrire
+  utter_software_teamviewer_deny2:
+  - text: "Créer un compte avec votre adresse en @cirilgroup.com.\n Le mot de passe\
+      \ n'est pas synchronisé avec notre SI interne."
+  utter_software_teamviewer_deny3:
+  - text: "La dsi devrait recevoir un mail automatique afin d'activer votre compte.\n\
+      \ Vous pouvez contacter dsi@cirilgroup.com si l'activation n'est pas effectué\
+      \ après 24 heures"
+  utter_software_teamviewer_licence:
+  - buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+    text: Disposez déjà vous d'une version TeamViewer sur votre poste ?
+  utter_software_teamviewer_licence_affirm:
+  - buttons:
+    - payload: /affirm
+      title: oui
+    - payload: /deny
+      title: non
+    text: Disposez-vous de la dernière version de TeamViewer ?
+  utter_software_teamviewer_licence_deny:
+  - custom:
+      link: lien de la dernière version
+    text: "Merci d'installer la dernière version Teamviewer : "
+  utter_software_teamviewer_licence_deny2:
+  - text: 'Réaliser ensuite la procédure suivante :'
+  utter_software_teamviewer_error:
+  - custom:
+      link: https://status.teamviewer.com
+    text: "Vous pouvez consulter l'état des serveurs Teamviewer à l'adresse suivante\
+      \ :"
+  utter_software_teamviewer_error2:
+  - custom:
+      email: dsi@cirilgroup.com
+    text: 'Vous pouvez contacter la dsi : '
+  utter_material_require_type:
+  - buttons:
+    - payload: /material_require_type_new
+      title: Nouveau matériel
+    - payload: /material_require_type_replacement
+      title: Remplacer de l'ancien
+    text: Souhaitez vous du nouveau matériel ou remplacer de l'ancien.
+  utter_material_require_type_replacement:
+  - custom:
+      link: url du gestionnaire de ticket replacement
+    text: 'Visiter le lien suivant:'
+  utter_material_require_type_new:
+  - buttons:
+    - payload: /material_require_type_new_hiring
+      title: Embauche
+    - payload: /material_require_type_new_sup
+      title: Matériel supplémentaire
+    text: Votre demande est consécutive à une embauche ou est-ce pour du matériel
+      supplémentaire ?
+  utter_material_require_type_new_hiring:
+  - custom:
+      link: url du gestionnaire de ticket new hiring
+    text: 'Visiter le lien suivant:'
+  utter_material_require_type_new_sup:
+  - custom:
+      link: url du gestionnaire de ticket new sup
+    text: 'Visiter le lien suivant:'
+actions:
+- action_restarted
+- action_slot_reset
+- action_get_knowledge
+- action_get_faq_answer
+- action_get_in_library

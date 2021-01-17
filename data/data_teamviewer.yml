@@ -1,0 +1,91 @@
+version: "2.0"
+
+nlu:
+- intent: software_teamviewer
+  examples: |
+    - J'ai un problème sur Teamviewer
+    - Problème sur TeamViewer
+    - Version gratuite TeamViewer
+    - Logiciel Teamviewer
+    - Problème de licence Teamviewer
+    - Licence non activée Teamviewer
+    - Mon TeamViewer ne fonctionne pas
+    - Bug de fonctionnement sur Teamviewer
+    - J'ai besoin d'aide sur Teamviewer
+- intent: software_teamviewer_licence
+  examples: |
+    - Version d'essai sans licence
+    - Obtenir une licence Teamviewer
+- intent: software_teamviewer_error
+  examples: |
+    - erreur dans mon teamviewer
+    - connexion non fonctionnelle teamviewer
+    - erreur de connexion dans teamviewer
+- intent: software_teamviewer_status
+  examples: |
+    - status Teamviewer
+    - Etat Teamviewer
+    - Serveur Teamviewer
+    - Teamviewer
+
+stories:
+- story: s001
+  steps:
+  - intent: software_teamviewer
+  - action: utter_software_teamviewer
+  - checkpoint: teamviewer
+
+- story: s002
+  steps:
+  - checkpoint: teamviewer
+  - intent: software_teamviewer_error
+  - action: utter_software_teamviewer_error
+  - action: utter_software_teamviewer_error2
+
+- story: s003
+  steps:
+  - intent: software_teamviewer_status
+  - action: utter_software_teamviewer_error
+  - action: utter_software_teamviewer_error2
+
+- story: s004
+  steps:
+  - checkpoint: teamviewer
+  - intent: software_teamviewer_licence
+  - action: utter_software_teamviewer_licence
+  - checkpoint: teamviewer_licence
+
+- story: s005
+  steps:
+  - checkpoint: teamviewer_licence
+  - intent: deny
+  - action: utter_software_teamviewer_licence_deny
+  - action: utter_software_teamviewer_licence_deny2
+  - action: utter_software_teamviewer_deny
+  - action: utter_software_teamviewer_deny2
+  - action: utter_software_teamviewer_deny3
+
+- story: s006
+  steps:
+  - checkpoint: teamviewer_licence
+  - intent: affirm
+  - action: utter_software_teamviewer_licence_affirm
+  - checkpoint: teamviewer_licence_affirm
+
+- story: s007
+  steps:
+  - checkpoint: teamviewer_licence_affirm
+  - intent: affirm
+  - action: utter_software_teamviewer_deny
+  - action: utter_software_teamviewer_deny2
+  - action: utter_software_teamviewer_deny3
+
+- story: s008
+  steps:
+  - checkpoint: teamviewer_licence_affirm
+  - intent: deny
+  - action: utter_software_teamviewer_licence_deny
+  - action: utter_software_teamviewer_licence_deny2
+  - action: utter_software_teamviewer_deny
+  - action: utter_software_teamviewer_deny2
+  - action: utter_software_teamviewer_deny3
