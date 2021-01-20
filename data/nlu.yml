@@ -64,6 +64,7 @@ nlu:
     - tellement bien
     - pas mal
     - très mal
+    - /mood_great
 - intent: mood_unhappy
   examples: |
     - ma journée était horrible
@@ -93,6 +94,7 @@ nlu:
   examples: |
     - Tout message sans intent associé
     - Message par défaut
+    - Badge perdu
 - intent: get_knowledge
   examples: |
     - liste des hotels de [Berlin](city)
