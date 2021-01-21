@@ -93,6 +93,7 @@ nlu:
   examples: |
     - Tout message sans intent associé
     - Message par défaut
+    - Adresse sx
 - intent: get_knowledge
   examples: |
     - liste des hotels de [Berlin](city)
