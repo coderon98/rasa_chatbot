@@ -11,9 +11,10 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: knowledge
+- rule: not found in faq
+  condition:
+  - slot_was_set:
+    - not_found_in_faq: 'True'
   steps:
-  - intent: get_knowledge
-  - action: action_get_knowledge
-  - action: action_slot_reset
-
+  - action: action_get_in_library
+  wait_for_user_input: false

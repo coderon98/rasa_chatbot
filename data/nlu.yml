@@ -93,9 +93,4 @@ nlu:
   examples: |
     - Tout message sans intent associé
     - Message par défaut
-- intent: get_knowledge
-  examples: |
-    - liste des hotels de [Berlin](city)
-    - liste des hotels de [Paris](city)
-    - liste des hotels [Hilton](name)
-    - liste des hotels [B&B](name)
+

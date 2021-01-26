@@ -1,0 +1,52 @@
+version: "2.0"
+
+nlu:
+- intent: assistance_vpn
+  examples: |
+   - Comment paramétrer mon client VPN ?
+   - Comment faire fonctionner mon VPN
+   - Activer mon VPN
+   - Comment paramétrer mon client VPN ?
+   - Comment activer mon client VPN ?
+   - J'ai un problème de VPN
+   - J'ai une erreur VPN
+   - Mon client VPN ne fonctionne pas
+
+
+stories:
+- story: Story de l'assistance VPN happy path
+  steps:
+  - intent: assistance_vpn
+  - action: utter_demander_type_materiel
+  - intent: affirm
+  - action: utter_materiel_pro
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: Story test
+  steps:
+  - intent: assistance_vpn
+  - action: utter_demander_type_materiel
+  - intent: deny
+  - action: utter_materiel_perso
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: Story test 3
+  steps:
+  - intent: assistance_vpn
+  - action: utter_demander_type_materiel
+  - intent: affirm
+  - action: utter_materiel_pro
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_unhappy
+- story: Story test 4
+  steps:
+  - intent: assistance_vpn
+  - action: utter_demander_type_materiel
+  - intent: deny
+  - action: utter_materiel_perso
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_unhappy

@@ -1,0 +1,64 @@
+version: "2.0"
+
+nlu:
+- intent: contextual_request
+  examples: |
+    - Je veux un récapitulatif de mes données collectées ?
+    - Qu'est ce que tu sais de moi ?
+    - Qu'est ce que tu sais à propos de moi ?
+    - Quelles sont les informations que tu as à mon sujet ?
+    - Peux tu me donner tes informations personnelles ?
+- intent: form_intent
+  examples: |
+    - Je veux remplir le formulaire de base
+    - Je veux tester le formulaire de base
+    - lance le formulaire appelé cirilform
+    - lance le cirilform
+    - démarre le cirilform
+
+- lookup: service
+  examples: |
+    - DRH
+    - DSI
+    - SAV
+    - R&D
+- lookup: poste
+  examples: |
+    - ingénieur
+    - technicien
+    - développeur
+    - directeur
+    - chef d'équipe
+- lookup: username
+  examples: |
+    - Rivaldo
+    - Robin
+    - Aurélien
+    - Jerémy
+    - Louis
+
+stories:
+- story: context story
+  steps:
+  - intent: contextual_request
+  - action: action_contextual_request
+
+rules:
+- rule: Activate cirilform
+  steps:
+  - intent: form_intent
+  - action: cirilform
+  - active_loop: cirilform
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: cirilform
+  steps:
+  # Form is deactivated
+  - action: cirilform
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_all_slots_filled
