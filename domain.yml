@@ -9,7 +9,6 @@ intents:
 - mood_great
 - mood_unhappy
 - bot_challenge
-- get_knowledge
 - material_require_type
 - material_require_type_replacement
 - material_require_type_new
@@ -21,40 +20,20 @@ intents:
 - software_teamviewer_status
 - nlu_fallback
 entities:
-- name
-- price_range
-- breakfast_included
-- city
-- free_wifi
-- star_rating
-- swimming_pool
+- username
+- service
+- poste
 - not_found_in_faq
 slots:
-  name:
+  username:
     type: text
     initial_value: ''
     influence_conversation: false
-  price_range:
+  service:
     type: text
     initial_value: ''
     influence_conversation: false
-  breakfast_included:
-    type: text
-    initial_value: ''
-    influence_conversation: false
-  city:
-    type: text
-    initial_value: ''
-    influence_conversation: false
-  free_wifi:
-    type: text
-    initial_value: ''
-    influence_conversation: false
-  star_rating:
-    type: text
-    initial_value: ''
-    influence_conversation: false
-  swimming_pool:
+  poste:
     type: text
     initial_value: ''
     influence_conversation: false
@@ -188,9 +167,8 @@ responses:
   - custom:
       link: url du gestionnaire de ticket new sup
     text: 'Visiter le lien suivant:'
+
 actions:
-- action_restarted
-- action_slot_reset
-- action_get_knowledge
 - action_get_faq_answer
 - action_get_in_library
+- action_contextual_request
