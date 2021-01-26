@@ -1,47 +1,12 @@
 version: "2.0"
 
 slots:
-  name:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  price_range:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  breakfast_included:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  city:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  free_wifi:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  star_rating:
-    type: text
-    influence_conversation: false
-    initial_value: ""
-  swimming_pool:
-    type: text
-    influence_conversation: false
-    initial_value: ""
   not_found_in_faq:
     type: text
     influence_conversation: true
     initial_value: false
 
 entities:
-  - name
-  - price_range
-  - breakfast_included
-  - city
-  - free_wifi
-  - star_rating
-  - swimming_pool
   - not_found_in_faq
 
 intents:
@@ -52,12 +17,8 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - get_knowledge
 
 actions:
-  - action_restarted
-  - action_slot_reset
-  - action_get_knowledge
   - action_get_faq_answer
   - action_get_in_library
 

@@ -1,0 +1,47 @@
+version: "2.0"
+
+slots:
+  username:
+    type: text
+    influence_conversation: false
+  poste:
+    type: text
+    influence_conversation: false
+  service:
+    type: text
+    influence_conversation: false
+
+entities:
+  - username
+  - poste
+  - service
+
+
+forms:
+  cirilform:
+    username:
+      - type: from_text
+        entity: username
+    service:
+      - type: from_text
+        entity: service
+    poste:
+      - type: from_text
+        entity: poste
+
+responses:
+  utter_ask_username:
+  - text: "Quel est votre identifiant public Ciril Group ?"
+  utter_ask_service:
+  - text: "Au sein de quel service, travaillez vous ?"
+  utter_ask_poste:
+  - text: "Quel est le poste que vous occupez ?"
+  utter_all_slots_filled:
+  - text: "Merci pour votre coopération"
+
+actions:
+  - action_contextual_request
+
+intents:
+  - contextual_request
+  - form_intent

@@ -1,0 +1,31 @@
+version: "2.0"
+
+intents:
+  - assistance_vpn
+
+responses:
+  utter_demander_type_materiel:
+  - text: "Réalisez-vous la connexion VPN sur un poste professionnel (matériel CIRIL GROUP) ?"
+    buttons:
+      - payload: /affirm
+        title: Matériel Professionnel
+      - payload: /deny
+        title: Matériel Personnel
+  - text: "Réalisez-vous la connexion VPN sur un poste professionnel  ?"
+    buttons:
+      - payload: /affirm
+        title: Matériel Professionnel
+      - payload: /deny
+        title: Matériel Personnel
+  utter_materiel_perso:
+  - text: "Vous allez recevoir un tutoriel pour configurer Forti VPN"
+    custom:
+      link: 'P:\SrvGeneraux&DSI\Public\Documentation\DSI_CIRIL-ProcedureTeletravail-V1.4-20200424.pdf'
+  utter_materiel_pro:
+  - text: "Vous allez recevoir un tutoriel pour configurer Ciril VPN"
+    custom:
+      link: 'P:\SrvGeneraux&DSI\Public\Documentation\DSI_CIRIL-VPNConnexionAutomatique.pdf'
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
