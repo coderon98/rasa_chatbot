@@ -93,4 +93,22 @@ nlu:
   examples: |
     - Tout message sans intent associé
     - Message par défaut
-
+    - Où se trouve l'adresse de villeurbanne ?
+    - Donne moi l'adresse du serveur sx
+    - Spacy vs Tensorflow
+    - Je cherche l'adresse du site de villeurbanne
+    - Je cherche l'adresse du site de [Paris](city)
+    - Adresse sx
+    - Spacy vs tensorflow
+    - Donne moi l'adresse du site de [Paris](city)
+    - SX
+    - VPN
+    - Adresse SX
+    - comment accéder à SX
+    - Donne moi l'adresse du site de villeurbanne
+    - J'ai perdu mon badge
+    - err'fgehd,
+    - Spay ot tensorflow
+    - Adresse du site de villeurbanne
+    - Badge perdu
+    - Adresse du site de vileurbanne

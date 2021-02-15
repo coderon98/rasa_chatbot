@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: material_require_type
   examples: |
@@ -11,6 +10,8 @@ nlu:
     - Demande de matériel neuf
     - Demande d'équipement neuf
     - demande de nouveau matériel
+    - Je veux faire une demande de matériel
+    - Je veux faire une demande de materiel
 - intent: material_require_type_replacement
   examples: |
     - Remplacer l'ancien équipement
@@ -28,35 +29,3 @@ nlu:
     - Demande de matériel supplémentaire
     - matériel supplémentaire
     - Demande d'équipement supplémentaire
-
-stories:
-- story: 01#
-  steps:
-  - intent : material_require_type
-  - action : utter_material_require_type
-  - checkpoint : require_type
-
-- story: 02#
-  steps:
-  - checkpoint : require_type
-  - intent : material_require_type_replacement
-  - action : utter_material_require_type_replacement
-
-- story: 03#
-  steps:
-  - checkpoint : require_type
-  - intent : material_require_type_new
-  - action : utter_material_require_type_new
-  - checkpoint : type_new
-
-- story: 04#
-  steps:
-  - checkpoint : type_new
-  - intent : material_require_type_new_hiring
-  - action : utter_material_require_type_new_hiring
-
-- story: 05#
-  steps:
-  - checkpoint : type_new
-  - intent : material_require_type_new_sup
-  - action : utter_material_require_type_new_sup
